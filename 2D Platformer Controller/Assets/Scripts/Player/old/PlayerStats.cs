@@ -16,13 +16,14 @@ public class PlayerStats : MonoBehaviour
 
     private GameManager GM;
 
-    public HealtBar healtBar;
+    private HealtBar healtBar;
 
     private void Start()
     {
         currentHealth = maxHealth;
-        healtBar.SetMaxHealth(maxHealth);
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        healtBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealtBar>();
+        healtBar.SetMaxHealth(maxHealth);
         Debug.Log("start" + healtBar.slider.value);
     }
 

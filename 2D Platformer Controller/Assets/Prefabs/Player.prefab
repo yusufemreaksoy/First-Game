@@ -159,7 +159,6 @@ GameObject:
   - component: {fileID: 5381180148665611396}
   - component: {fileID: 5381180148665611399}
   - component: {fileID: 5381180148665611398}
-  - component: {fileID: 4617465074877723431}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -503,20 +502,8 @@ MonoBehaviour:
     type: 3}
   deathBloodParticle: {fileID: 921195174077244827, guid: cc23c6d853b46904893dfb96e2611a5e,
     type: 3}
-  healtBar: {fileID: 921108227958114787, guid: 6b04d9c26b88673459e23b783039269c, type: 3}
---- !u!114 &4617465074877723431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5381180148665611420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 963d0aa74bc977841bfad61aed05dd3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  healtBar: {fileID: 5369057229966852283, guid: ffd110abbaca8aa4fbfd1ea7cd7cd7f2,
+    type: 3}
 --- !u!1 &5381180148686264599
 GameObject:
   m_ObjectHideFlags: 0
