@@ -109,7 +109,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1648665187
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9eebe1a8f1f47d3449bc7fa612458898, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 5381180148665611396}
   - component: {fileID: 5381180148665611399}
   - component: {fileID: 5381180148665611398}
+  - component: {fileID: 64509411}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -174,7 +175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5381180148665611420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.09, y: 11.02, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5381180148988836912}
@@ -304,20 +305,13 @@ MonoBehaviour:
     m_ActionId: 87373502-c323-497d-bfdf-54c4ea42e389
     m_ActionName: Gameplay/Primary Attack[/Mouse/leftButton,/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5381180148665611423}
-        m_MethodName: OnSecondaryAttackInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 1eaa5332-3b25-4b81-b519-0c89df241ed3
     m_ActionName: Gameplay/Secondary Attack[/Mouse/rightButton,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 22e563af-ae92-4ddd-815e-5066efc95f21
+    m_ActionName: UI/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -354,7 +348,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,7 +367,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1648665187
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 4862319426723709295, guid: e4b025aaf79fa8645a5b1824476a2ea9,
     type: 3}
@@ -502,8 +496,18 @@ MonoBehaviour:
     type: 3}
   deathBloodParticle: {fileID: 921195174077244827, guid: cc23c6d853b46904893dfb96e2611a5e,
     type: 3}
-  healtBar: {fileID: 5369057229966852283, guid: ffd110abbaca8aa4fbfd1ea7cd7cd7f2,
-    type: 3}
+--- !u!114 &64509411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381180148665611420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a73d65601055ce4cb77a6b163077226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5381180148686264599
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +590,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -605,7 +609,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1648665187
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -760,7 +764,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -779,7 +783,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1648665187
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

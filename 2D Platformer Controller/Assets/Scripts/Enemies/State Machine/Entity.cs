@@ -16,6 +16,7 @@ public class Entity : MonoBehaviour
     public AnimationToStatemachine atsm { get; private set; }
     public int lastDamageDirection { get; private set; }
 
+
     private float 
         currentHealth,
         currentStunResistance,
@@ -112,6 +113,8 @@ public class Entity : MonoBehaviour
 
         DamageHop(entityData.damageHopSpeed);
 
+        FindObjectOfType<AudioManager>().Play("Creature_Hit");
+
         Instantiate(entityData.hitParticle, aliveGO.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
 
         if(attackDetails.position.x > aliveGO.transform.position.x)
@@ -157,6 +160,7 @@ public class Entity : MonoBehaviour
         facingDirection *= -1;
         aliveGO.transform.Rotate(0f, 180f, 0f);
     }
+
 
     public virtual void OnDrawGizmos() 
     {

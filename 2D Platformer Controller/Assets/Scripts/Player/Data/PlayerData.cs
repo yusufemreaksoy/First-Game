@@ -59,5 +59,6 @@ public class PlayerData : ScriptableObject
     public Vector2 knockbackSpeed;
     public LayerMask whatIsGround;
     public LayerMask whatIsDamagable;
+    public LayerMask whatIsTraps;
 
 }

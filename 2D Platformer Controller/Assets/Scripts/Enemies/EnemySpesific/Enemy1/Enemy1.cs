@@ -34,7 +34,6 @@ public class Enemy1 : Entity
 
     [SerializeField]
     private Transform meleeAttackPosition;
-    
 
 
     public override void Start()
@@ -63,6 +62,8 @@ public class Enemy1 : Entity
     public override void Damage(AttackDetails attackDetails)
     {
         base.Damage(attackDetails);
+
+
         if (isDead)
         {
             stateMachine.ChangeState(deathState);

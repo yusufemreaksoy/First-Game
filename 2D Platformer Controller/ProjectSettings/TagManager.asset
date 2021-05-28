@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - HealthBar
+  - Menu
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Damageable
   - Dead
   - Player
-  - 
+  - Trap
   - 
   - 
   - 
@@ -51,6 +52,9 @@ TagManager:
     locked: 0
   - name: Platform
     uniqueID: 1794113835
+    locked: 0
+  - name: Traps
+    uniqueID: 1507499729
     locked: 0
   - name: Enemy
     uniqueID: 399452187

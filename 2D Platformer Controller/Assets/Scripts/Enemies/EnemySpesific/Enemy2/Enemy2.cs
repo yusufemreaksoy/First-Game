@@ -39,6 +39,8 @@ public class Enemy2 : Entity
     [SerializeField]
     private Transform rangedAttackPosition;
 
+
+
     public override void Start()
     {
         base.Start();
@@ -59,6 +61,7 @@ public class Enemy2 : Entity
     public override void Damage(AttackDetails attackDetails)
     {
         base.Damage(attackDetails);
+
 
         if (isDead)
         {

@@ -21,6 +21,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
     public bool[] AttackInputs { get; private set; }
+    public bool PauseInput { get; private set; }
 
     [SerializeField]
     private float inputHoldTime = 0.2f;
@@ -42,13 +43,24 @@ public class PlayerInputHandler : MonoBehaviour
         CheckDashInputHoldTime();
     }
 
+    public void OnPauseInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            PauseInput = true;
+        }
+        if (context.canceled)
+        {
+            PauseInput = false;
+        }
+    }
     public void OnPrimaryAttackInput(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             AttackInputs[(int)CombatInputs.primary] = true;
         }
-        if(context.canceled)
+        if (context.canceled)
         {
             AttackInputs[(int)CombatInputs.primary] = false;
         }
@@ -60,7 +72,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             AttackInputs[(int)CombatInputs.secondary] = true;
         }
-        if(context.canceled)
+        if (context.canceled)
         {
             AttackInputs[(int)CombatInputs.secondary] = false;
         }
@@ -119,13 +131,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         RawDashDirectionInput = context.ReadValue<Vector2>();
 
-        if(playerInput.currentControlScheme == "Keyboard")
+        if (playerInput.currentControlScheme == "Keyboard")
         {
-            RawDashDirectionInput = cam.ScreenToWorldPoint((Vector3)RawDashDirectionInput) - transform.position;    
+            RawDashDirectionInput = cam.ScreenToWorldPoint((Vector3)RawDashDirectionInput) - transform.position;
         }
-
         DashDirectionInput = Vector2Int.RoundToInt(RawDashDirectionInput.normalized);
     }
+
 
     public void UseJumpInput() => JumpInput = false;
 
@@ -133,7 +145,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void CheckDashInputHoldTime()
     {
-        if(Time.time >= dashInputStartTime + inputHoldTime)
+        if (Time.time >= dashInputStartTime + inputHoldTime)
         {
             DashInput = false;
         }
@@ -141,7 +153,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void CheckJumpInputHoldTime()
     {
-        if(Time.time>= jumpInputStartTime + inputHoldTime)
+        if (Time.time >= jumpInputStartTime + inputHoldTime)
         {
             JumpInput = false;
         }

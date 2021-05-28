@@ -37,7 +37,6 @@ public class PlayerState
     {
         player.Anim.SetBool(animBoolName, false);
         isExitingState = true;
-
     }
 
     public virtual void LogicUpdate()
@@ -55,5 +54,6 @@ public class PlayerState
     public virtual void AnimationTrigger() { }
 
     public virtual void AnimationFinishTrigger() => isAnimationFinished = true;
+
     
 } 

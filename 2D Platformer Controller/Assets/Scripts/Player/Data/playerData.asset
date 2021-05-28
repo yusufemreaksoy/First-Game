@@ -48,3 +48,6 @@ MonoBehaviour:
   whatIsDamagable:
     serializedVersion: 2
     m_Bits: 512
+  whatIsTraps:
+    serializedVersion: 2
+    m_Bits: 4096

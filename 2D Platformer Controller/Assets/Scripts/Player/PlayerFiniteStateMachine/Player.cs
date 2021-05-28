@@ -94,7 +94,6 @@ public class Player : MonoBehaviour
         MovementCollider = GetComponent<BoxCollider2D>();
         Inventory = GetComponent<PlayerInventory>();
         PS = GetComponent<PlayerStats>();
-
         FacingDirection = 1;
 
         PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
@@ -155,9 +154,17 @@ public class Player : MonoBehaviour
         RB.velocity = workSpace;
         CurrentVelocity = workSpace;
     }
+
+   
+
     #endregion
 
     #region Check Functions
+
+    public bool CheckForTraps()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsTraps);
+    }
 
     public bool CheckForCeiling()
     {
@@ -217,6 +224,7 @@ public class Player : MonoBehaviour
 
     #region Other Functions
 
+
     public Vector2 DetermineCornerPosition()
     {
         RaycastHit2D xHit =Physics2D.Raycast(wallCheck.position,Vector2.right*FacingDirection,playerData.wallCheckDistance,playerData.whatIsGround);
@@ -238,6 +246,7 @@ public class Player : MonoBehaviour
         MovementCollider.size = workSpace;
         MovementCollider.offset = center;
     }
+
 
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 

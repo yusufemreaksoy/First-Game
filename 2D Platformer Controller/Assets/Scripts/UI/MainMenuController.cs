@@ -1,14 +1,22 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class MainMenuController : MonoBehaviour
 {
+    private LevelLoader levelLoader;
+
+    private void Start()
+    {
+        levelLoader = FindObjectOfType<LevelLoader>();
+    }
+
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        levelLoader.LoadScene();
     }
+
+
 
     public void Quit()
     {
